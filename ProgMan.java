@@ -12,7 +12,7 @@ public class ProgMan {
 
     public ProgMan() {
         frame = new JFrame("ProgMan");
-        frame.setSize(640, 480);
+        frame.setSize(900, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setBackground(Color.BLACK);
 
@@ -25,7 +25,7 @@ public class ProgMan {
         loadMenus("progman.dat");
 
         JLabel label = new JLabel("Program Manager", SwingConstants.CENTER);
-        label.setForeground(Color.GREEN);
+        label.setForeground(Color.WHITE);
         label.setFont(new Font("Courier New", Font.BOLD, 18));
         label.setOpaque(true);
         label.setBackground(Color.BLACK);
