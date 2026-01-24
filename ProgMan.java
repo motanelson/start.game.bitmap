@@ -110,7 +110,7 @@ public class ProgMan {
                 continue;
 
             try {
-                new ProcessBuilder("cmd", "/c", cmd).start();
+                new ProcessBuilder("sh", "-c", cmd).start();
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(
                     frame,
