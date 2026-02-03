@@ -1,18 +1,27 @@
 
 import tkinter as tk
-
-# Configuração da janela
-WIDTH = 600
-HEIGHT = 400
-STEP = 10  # pixels por movimento
-
+from PIL import Image, ImageTk
+STEP=10
 root = tk.Tk()
-root.title("Rectângulo com Teclas Direcionais")
-
-canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT, bg="black")
+canvas = tk.Canvas(root, width=600, height=400, bg="black")
 canvas.pack()
-pic=tk.PhotoImage(file="bit.png")
-# Criar rectângulo (x1, y1, x2, y2)
+
+img = Image.open("bit.png").convert("RGBA")
+
+data = img.getdata()
+new_data = []
+
+for pixel in data:
+    # se for preto puro, fica transparente
+    if pixel[0] == 0 and pixel[1] == 0 and pixel[2] == 0:
+        new_data.append((0, 0, 0, 0))
+    else:
+        new_data.append(pixel)
+
+img.putdata(new_data)
+
+pic = ImageTk.PhotoImage(img)
+
 rect = canvas.create_image(50, 50, image=pic)
 
 def move(event):
