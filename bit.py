@@ -11,7 +11,7 @@ root.title("Rectângulo com Teclas Direcionais")
 
 canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT, bg="black")
 canvas.pack()
-pic=tk.PhotoImage(file="bit.gif")
+pic=tk.PhotoImage(file="bit.png")
 # Criar rectângulo (x1, y1, x2, y2)
 rect = canvas.create_image(50, 50, image=pic)
 
